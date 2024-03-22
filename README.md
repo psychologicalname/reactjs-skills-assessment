@@ -31,7 +31,7 @@
     1. Construct a product page to display all products utilizing the provided API. 
     2. Implement category filters allowing users to refine product listings based on selected categories.
 
-**Bonus Task (Optional): **
+**Bonus Task (Optional):**
 
     1. Implement unit tests for at least one component using the Jest and React Testing Library (Or any library).
     2. Add typescript support and make sure components are typed appropriately.
