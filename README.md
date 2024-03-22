@@ -35,6 +35,7 @@
 
     1. Implement unit tests for at least one component using the Jest and React Testing Library (Or any library).
     2. Add typescript support and make sure components are typed appropriately.
+    3. Mobile responsive for all the pages.
     
 **API Details**
 
