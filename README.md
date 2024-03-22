@@ -4,7 +4,7 @@
 
 **Objective**: Screen development & Integration, as per the below details.
 
-**Design Figma URL** - https://www.figma.com/file/6xhuursXAVWZiZlgH367HS/React-Ninja-Template
+**Design Figma URL** - [Figma Link](https://www.figma.com/file/I4Kc9Ec65lSDllHEp8c3ye/Front-End-Assignment?type=design&node-id=1%3A2&mode=design&t=EaKDe6TwTyAW9hv8-1)
 
 **Design consists of two pages**
 - Signup Page
