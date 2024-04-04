@@ -1,74 +1,49 @@
-# Reactjs skills assessment
+# My T3 App
 
-**Before proceeding, kindly review the following details prior to cloning the repository.**
+This is a [Next.js](https://nextjs.org) application bootstrapped with ⁠ create-t3-app ⁠. It includes user authentication and products viewing functionalities.
 
-**Objective**: Screen development & Integration, as per the below details.
+## Features
 
-**Design Figma URL** - [Figma Link](https://www.figma.com/file/I4Kc9Ec65lSDllHEp8c3ye/Front-End-Assignment?type=design&node-id=1%3A2&mode=design&t=EaKDe6TwTyAW9hv8-1)
+### User Authentication
 
-**Design consists of two pages**
-- Signup Page
-- Product Page
+Users can sign up and log in to the application. During the signup process, use ⁠ 111111 ⁠ as the OTP. 
 
-**Tasks**
+### View Products
 
-  **Task 1: Setup**
-  
-    1. Fork the repository.
-    2. Install all necessary dependencies.
-    3. Run the application to ensure everything is set up correctly.
+After logging in, users can see the list of products with their details.
 
-  **Task 2: Signup page**
-  
-    1. Develop a signup page incorporating essential components.
-    2. Implement form state management functionalities. 
-    3. Utilize the `formik` package for form validation.
+## Tech Stack
 
-    ***Note: Integration with API is not required ***
+⁠- [Next.js](https://nextjs.org): A React framework for building the overall structure of the application.
+- ⁠[API Routes](https://nextjs.org/docs/api-routes/introduction): Used for creating server-side API endpoints.
+- ⁠[Tailwind CSS](https://tailwindcss.com): A utility-first CSS framework for styling the application.
+- ⁠[TypeScript](https://www.typescriptlang.org/): A typed superset of JavaScript that adds static types.
+- ⁠[Prisma](https://prisma.io): An open-source database toolkit for handling database operations.
+- ⁠[Postgres](https://www.postgresql.org/): The database used to store user and interest data.
+- ⁠[Next.js Middleware](https://nextjs.org/docs/middleware): Used to check if a user is logged in. If a user is not logged in, they are redirected to the login page.
 
-**Task 3: Products page**
+# Getting Started
 
-    1. Construct a product page to display all products utilizing the provided API. 
-    2. Implement category filters allowing users to refine product listings based on selected categories.
+Follow these steps to set up the application:
 
-**Bonus Task (Optional):**
+1.⁠ ⁠Create a ⁠`.env` ⁠file in the root directory of the project and add the following line:
 
-    1. Implement unit tests for at least one component using the Jest and React Testing Library (Or any library).
-    2. Add typescript support and make sure components are typed appropriately.
-    3. Mobile responsive for all the pages.
-    
-**API Details**
+    ⁠```properties
+    DATABASE_URL="postgresql://com_owner:S3GZdHRzFjr4@ep-late-mouse-a110uw2t.ap-southeast-1.aws.neon.tech/com?sslmode=require"
+    ```
 
-Products API - GET - https://fakestoreapi.com/products
+    This sets up the connection to the PostgreSQL database.
 
-_Sample Response_
-```
-{
-  "id": 1,
-  "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
-  "price": 109.95,
-  "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-  "category": "men's clothing",
-  "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-  "rating": {
-    "rate": 3.9,
-    "count": 120
-  }
-},
-```
+2.⁠ ⁠Install the project dependencies:
 
-**Please be aware: Direct git push to this repository is restricted. Only pull requests (PRs) from forked repositories are accepted.**
- 
-**Additional Information:**:
-Utilization of frontend frameworks such as Next.js, Tailwind CSS, Formik, etc., is encouraged. 
+    ```bash
+    npm install
+    ```
 
-Upon completion of the development, kindly submit a pull request from your forked repository. Your work will undergo assessment based on:
+3.⁠ ⁠Start the development server:
 
-- **Adherence to Design Specifications**
-- **Coding Standards Compliance**
-- **Code Readability & Reusability**
-- **Code Quality and Conciseness**
+    ```bash
+    npm run dev
+    ```
 
-This repository serves the purpose of facilitating the interview process @Blocktheory. Only candidates referred for the interview process are granted access.
-
-Happy Coding!!!
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
