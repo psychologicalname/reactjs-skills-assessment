@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react"
 
-const Categories = ({ setOpenFilter, setCategorySelected, categorySelected }) => {
+interface CategoriesProps {
+    setOpenFilter: React.Dispatch<React.SetStateAction<boolean>>;
+    setCategorySelected: React.Dispatch<React.SetStateAction<string | null>>;
+    categorySelected: string | null;
+}
+
+const Categories: React.FC<CategoriesProps> = ({ setOpenFilter, setCategorySelected, categorySelected }) => {
 
     const [categories, setCategories] = useState([])
     const [loading, setLoading] = useState(false)
@@ -21,7 +27,7 @@ const Categories = ({ setOpenFilter, setCategorySelected, categorySelected }) =>
         }
     }, [])
 
-    const handleChanged = (e: { preventDefault: () => void; currentTarget: { category: { value: any } } }) => {
+    const handleChanged = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         setCategorySelected(e.currentTarget.category.value);
         setOpenFilter(false)

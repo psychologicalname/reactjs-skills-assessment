@@ -9,7 +9,7 @@ import Categories from "./Categories";
 const Products = () => {
 
     const [products, setProducts] = useState<Product[]>([])
-    const [categorySelected, setCategorySelected] = useState(null)
+    const [categorySelected, setCategorySelected] = useState<string | null>(null)
     const [openFilter, setOpenFilter] = useState(false)
     const [loading, setLoading] = useState(false)
 
