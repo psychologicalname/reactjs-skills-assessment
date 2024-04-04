@@ -24,6 +24,7 @@ export async function middleware(request: NextRequest) {
   })
 
   response.headers.set('user', JSON.stringify(user))
+  response.headers.set(`x-middleware-cache`, `no-cache`);
   return response
 }
 
