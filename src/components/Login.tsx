@@ -32,7 +32,7 @@ const Login = () => {
                 if (!data.isLoggedIn) {
                     alert('Invalid E-mail or Password');
                 } else {
-                    router.push('/')
+                    window.location.href = "/"
                 }
             })
             .catch((error) => {
