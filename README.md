@@ -1,6 +1,6 @@
-# My T3 App
+# Reactjs Skills Assessment
 
-This is a [Next.js](https://nextjs.org) application bootstrapped with ⁠ create-t3-app ⁠. It includes user authentication and products viewing functionalities.
+This application includes user authentication and products viewing functionalities.
 
 ## Features
 
@@ -28,22 +28,20 @@ Follow these steps to set up the application:
 
 1.⁠ ⁠Create a ⁠`.env` ⁠file in the root directory of the project and add the following line:
 
-    ⁠```properties
-    DATABASE_URL="postgresql://com_owner:S3GZdHRzFjr4@ep-late-mouse-a110uw2t.ap-southeast-1.aws.neon.tech/com?sslmode=require"
-    ```
+    
+    DATABASE_URL="postgresql://com_owner:fkghvPG56LDK@ep-twilight-moon-a54i9f0m.us-east-2.aws.neon.tech/com?sslmode=require"
+    
 
-    This sets up the connection to the PostgreSQL database.
+This sets up the connection to the PostgreSQL database.
 
 2.⁠ ⁠Install the project dependencies:
 
-    ```bash
+    
     npm install
-    ```
+    
 
 3.⁠ ⁠Start the development server:
 
-    ```bash
     npm run dev
-    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
