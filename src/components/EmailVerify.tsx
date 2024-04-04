@@ -28,7 +28,7 @@ const EmailVerify: FC<{ user: UserSignupData }> = ({ user }) => {
                     alert('Looks like this e-mail already exists');
                     router.push('/login')
                 } else {
-                    router.push('/')
+                    window.location.href = '/'
                 }
             })
             .catch((error) => {
