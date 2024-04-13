@@ -1,8 +1,13 @@
 import Image from 'next/image'
-import { TiStar } from "react-icons/ti";
-import { Product } from '~/utils/types';
+import React from 'react';
+import { FaMinus, FaPlus } from 'react-icons/fa';
+import { CartItem, Product } from '~/utils/types';
 
-const ProductCard = ({ product, index }: { product: Product, index: number }) => {
+type HandelAdd = (id: number) => void
+type HandleMinus = (id: number) => void
+
+const ProductCard = ({ product, index, cart, handleAdd, handleMinus }: { product: Product, index: number, cart: CartItem[], handleAdd: HandelAdd, handleMinus: HandleMinus }) => {
+    const count = cart.filter((item: CartItem) => item.product_id === product.id).length
     return (
         <div className='group mb-6 cursor-pointer'>
             <div className='relative h-[400px] object-contain bg-gray-100 p-4'>
@@ -16,12 +21,17 @@ const ProductCard = ({ product, index }: { product: Product, index: number }) =>
                 <div className='flex justify-between w-full'>
                     <p className='text-sm text-gray-500'>{product.category}</p>
                     <div className='flex items-center space-x-2'>
-                        {index === 3 || index === 5 ? <p className=' text-gray-500 text-sm line-through'>$ {product.price*2}</p> : null}
-                        <p className={`font-semibold text-base ${index === 3 || index === 5 ? 'text-red-500':'text-black'}`}>$ {product.price}</p>
+                        {index === 3 || index === 5 ? <p className=' text-gray-500 text-sm line-through'>$ {product.price * 2}</p> : null}
+                        <p className={`font-semibold text-base ${index === 3 || index === 5 ? 'text-red-500' : 'text-black'}`}>$ {product.price}</p>
                     </div>
                 </div>
+                <div className="border rounded-full border-gray-300 w-1/2 mt-4 flex">
+                    <FaPlus onClick={() => handleAdd(product.id)} className="" />
+                    {count}
+                    <FaMinus onClick={() => handleMinus(product.id)} className="" />
+                </div>
             </div>
-        </div>
+        </div >
     )
 }
 

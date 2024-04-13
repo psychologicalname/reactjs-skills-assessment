@@ -1,3 +1,8 @@
+export interface CartItem {
+    product_id: number;
+    count: number;
+}
+
 export interface Product {
     id: number;
     title: string;
@@ -8,7 +13,7 @@ export interface Product {
     rating: {
         rate: number;
         count: number;
-    }  
+    }
 }
 
 export interface User {

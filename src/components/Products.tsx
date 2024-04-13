@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaFilter } from "react-icons/fa6";
 
-import { Product } from "~/utils/types";
+import { CartItem, Product } from "~/utils/types";
 import ProductCard from "./ProductCard";
 import Categories from "./Categories";
 
@@ -12,6 +12,7 @@ const Products = () => {
     const [categorySelected, setCategorySelected] = useState<string | null>(null)
     const [openFilter, setOpenFilter] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [cart, setCart] = useState<CartItem[]>([])
 
     useEffect(() => {
         try {
@@ -36,6 +37,38 @@ const Products = () => {
 
     console.log(categorySelected)
 
+    const handleAdd = (id: number) => {
+        const newArr = [...cart]
+        const itemIndex = newArr.findIndex(item => item.product_id === id)
+        if (itemIndex > -1) {
+            const foundItem = newArr[itemIndex]
+            if (foundItem) {
+                foundItem.count += 1
+                newArr[itemIndex] = foundItem
+            }
+        }
+        else {
+            newArr.push({ product_id: id, count: 1 })
+        }
+        setCart(newArr)
+    }
+
+    const handleMinus = (id: number) => {
+        const newArr = [...cart]
+        const itemIndex = newArr.findIndex(item => item.product_id === id)
+        if (itemIndex !== -1) {
+            const foundItem = newArr[itemIndex]
+            if (foundItem && foundItem.count > 0) {
+                foundItem.count -= 1
+                newArr[itemIndex] = foundItem
+            }
+        }
+        setCart(newArr)
+    }
+
+    console.log("Number of unique products in cart:", cart.length)
+    console.log("Total number of products in the cart:", cart.reduce((acc, item) => acc + item.count, 0))
+
     return (
         <div className='container'>
             <h1 className='text-[32px] font-semibold text-center'>
@@ -57,7 +90,7 @@ const Products = () => {
                 </svg>
             </div> : <div className="px-4 md:px-0 md:grid grid-cols-4 gap-8">
                 {products.map((item, index) => (
-                    <ProductCard key={item.id} product={item} index={index} />
+                    <ProductCard cart={cart} key={item.id} product={item} index={index} handleAdd={handleAdd} handleMinus={handleMinus} />
                 ))}
             </div>}
 
